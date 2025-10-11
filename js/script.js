@@ -150,14 +150,14 @@ function initializeHomePage() {
 
     // Mandatory dates functionality
     const mandatoryDates = [
-        { image: "announcement1.jpg", title: "First Parade Night", subtitle: "September 10, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement2.jpg", title: "Uniform Fitting", subtitle: "September 17, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement3.jpg", title: "Drill Practice", subtitle: "September 24, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement4.jpg", title: "Fitness Assessment", subtitle: "October 1, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement5.jpg", title: "Marksmanship", subtitle: "October 8, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement6.jpg", title: "Guest Speaker", subtitle: "October 15, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement7.jpg", title: "Field Training", subtitle: "October 22, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "announcement8.jpg", title: "Remembrance Parade", subtitle: "November 5, 2025", time: "6:30 PM - 9:30 PM" }
+        { image: "../assets/mandatorydates/mandatorydate1.jpg", title: "351 Birthday", subtitle: "September 10, 2025", time: "All Day" },
+        { image: "../assets/mandatorydates/mandatorydate2.jpg", title: "ACR", subtitle: "September 17, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "../assets/mandatorydates/mandatorydate3.jpg", title: "ACR", subtitle: "September 24, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "../assets/mandatorydates/mandatorydate4.jpg", title: "ACR", subtitle: "October 1, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "../assets/mandatorydates/mandatorydate5.jpg", title: "ACR", subtitle: "October 8, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "../assets/mandatorydates/mandatorydate6.jpg", title: "ACR", subtitle: "October 15, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "../assets/mandatorydates/mandatorydate7.jpg", title: "ACR", subtitle: "October 22, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "../assets/mandatorydates/mandatorydate8.jpg", title: "ACR", subtitle: "November 5, 2025", time: "6:30 PM - 9:30 PM" }
     ];
 
     let page = 0;

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+    <title>351 Silver Star - Calendar</title>
+    <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+</head>
+<body>
+    <div id="header">
+        <div>
+            <div id="logo">
+                <img src="../assets/logo/logobanner.png" alt="Logo" onclick="window.location.href='../index.html'">
+            </div>
+            <div id="icons">
+                
+
+                <button onclick="signIn()" title="Sign In">
+                    <img src="../assets/icons/user.png" alt="Sign In">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="supporters.html">Supporters</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="teams.html">Teams</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="calendar-hero">
+        <h1>Calendar & Events</h1>
+        <p>Stay updated with all squadron activities, training sessions, and important dates</p>
+    </div>
+
+    <div class="calendar-container">
+        <div class="calendar-controls" id="calendarControls">
+            <div class="view-options">
+                <button class="view-option active" data-view="month">Month</button>
+                <button class="view-option" data-view="week">Week</button>
+                <button class="view-option" data-view="agenda">Agenda</button>
+            </div>
+        </div>
+
+        <div id="calendar">
+            <iframe src="https://calendar.google.com/calendar/u/0/embed?src=351silverstar.com_944h308s2ij7v7jshrvqm822e4@group.calendar.google.com&ctz=America/Toronto&mode=MONTH" 
+                    style="border: 0;" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    scrolling="no"
+                    id="calendarFrame">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="calendar-tips" id="calendarTips">
+        <h3>351 Silver Star Calendar</h3>
+        <p>Click on any event to see details • Use the view options to switch between Month, Week, and Agenda views • Calendar can change at anytime.</p>
+    </div>
+
+<div id="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>LOCATION</h3>
+      <p><a href="https://www.google.com/maps/place/Bur+Oak+Secondary+School/@43.8970623,-79.2811679,17z/data=!3m2!4b1!5s0x89d529e2d422ea0d:0x48ba8f34c459e4fa!4m6!3m5!1s0x89d5294cb29440af:0x18523a6edc80077c!8m2!3d43.8970585!4d-79.2785876!16s%2Fm%2F051xq5w?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D">Bur Oak Secondary School</a></p>
+      <p>933 Bur Oak Avenue</p>
+      <p>Markham, ON L6E 1G4</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>SOCIAL LINKS</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/351SilverStar"><img src="../assets/icons/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/351silverstar/"><img src="../assets/icons/instagram-icon.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="https://aircadetsontario.ca/">Air Cadet League of Canada, Ontario Provincial Committee</a></li>
+        <li><a href="https://aircadetleague.com/">Air Cadet League of Canada</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>DISCLAIMER</h3>
+      <p>This is the official website of the civilian Squadron Sponsoring Committee for the 351 Silver Star Squadron - Unionville. This is not a Department of National Defence website. Squadron proprietary information and images may not be reproduced or used without permission.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 351 Silver Star Squadron - Unionville. All rights reserved.</p>
+  </div>
+</div>
+
+</body>
+</html>

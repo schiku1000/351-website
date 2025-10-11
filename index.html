@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <title>351 Silver Star Squadron - Unionville</title>
+    <link rel="icon" type="image/png" href="assets/logo/logo.png">
+    
+</head>
+<body>
+    <div id="header">
+        <div>
+            <div id="logo">
+                <img src="assets/logo/logobanner.png" alt="Logo" onclick="window.location.href='index.html'">
+            </div>
+            <div id="icons">
+                <button onclick="signIn()" title="Sign In">
+                    <img src="assets/icons/user.png" alt="Sign In">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="pages/aboutus.html">About Us</a></li>
+                <li><a href="pages/supporters.html">Supporters</a></li>
+                <li><a href="pages/calendar.html">Calendar</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/teams.html">Teams</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div id="mainlandingpage">
+        <div>
+            <img src="assets/logo/logo.png" alt="Squadron Logo">
+            <h1>Welcome to 351 Silver Star Squadron!</h1>
+            <p>351 meets every Tuesday evening at Bur Oak Secondary School for mandatory training with exciting weekend activities throughout the year.</p>
+            <div class="button-group">
+                <button onclick="registerClicked()">Join Us</button>
+                <button onclick="scrollToAnnouncements()">Announcements</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcements -->
+    <div class="announcements-header">Announcements</div>
+    <div id="announcements" class="announcements-grid">
+        <div class="announcement-card" data-title="Weekly Sports Night - Come out and play!" data-details="Details for Announcement 1.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement1.png');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Every Friday</div>
+                <div class="announcement-title">Sports Night</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 2.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement2.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 2</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 3.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement3.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 3</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 4.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement4.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 4</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 5.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement5.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 5</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 6.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement6.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 6</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 7.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement7.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 7</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+        <div class="announcement-card" data-title="Placeholder" data-details="Details for Announcement 8.">
+            <div class="announcement-bg" style="background-image: url('assets/announcements/announcement8.jpg');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">Announcement 8</div>
+                <div class="announcement-title">Placeholder</div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup-overlay" style="display:none;">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2 id="popup-title"></h2>
+            <p id="popup-details"></p>
+        </div>
+    </div>
+
+    <div class="featured-announcements-section">
+        <!-- Left: Notice box -->
+        <div class="featured-main">
+            <div class="featured-main-content">
+                <div class="featured-main-title">Supply</div>
+                <div class="featured-main-desc">
+                    EXCHANGE: Cadets with ill-fitting uniform parts can submit requests for exchange for a size that fits from the dashboard: Click Exchange at the bottom of the dashboard under Supply.<br><br>
+                    Please note: pick up will be at the Squadron Office on the Supply night. If parts are not in stock, you will be notified when the parts will be ready to pick up.<br>
+                    Squadron office address:<br>
+                    Unit 5 - 185 Riviera Dr, Markham,<br>
+                    Ontario L3R 5J6<br><br>
+                    Supply Nights will be on Thursday of each month, Sept 11th, Sept 25th, Oct 23rd, Nov 20th and Dec 11th between 6:30 pm to 8:30 pm. Cadets can drop by without advance request, but no guarantee that the uniform parts are in stock. Please bring back the washed uniform to exchange.<br><br>
+                    RETURN: Cadets no longer with the squadron should return their washed uniform to supply. Returns are accepted every Tuesday during regular training at Bur Oak Secondary School. Drop off the uniform on the Supply Desk. Please include the return form.<br><br>
+                    Cadets with outstanding supply requests are to follow up with the Supply WO.
+                </div>
+            </div>
+        </div>
+        <div class="featured-side">
+            <div class="featured-side-title-main">Mandatory Dates</div>
+            <center>
+            <p><strong>Cadets are required to attend the following Mandatory Training Activities:</strong></p>
+            <br>
+            </center>
+            <div class="featured-side-list" id="featured-side-list">
+                <!-- Training date cards will be injected here -->
+            </div>
+            <div class="featured-arrows">
+                <button class="featured-arrow" id="dates-left">&#8592;</button>
+                <button class="featured-arrow" id="dates-right">&#8594;</button>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br>
+    
+<div id="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>LOCATION</h3>
+      <p><a href="https://www.google.com/maps/place/Bur+Oak+Secondary+School/@43.8970623,-79.2811679,17z/data=!3m2!4b1!5s0x89d529e2d422ea0d:0x48ba8f34c459e4fa!4m6!3m5!1s0x89d5294cb29440af:0x18523a6edc80077c!8m2!3d43.8970585!4d-79.2785876!16s%2Fm%2F051xq5w?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D">Bur Oak Secondary School</a></p>
+      <p>933 Bur Oak Avenue</p>
+      <p>Markham, ON L6E 1G4</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>SOCIAL LINKS</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/351SilverStar"><img src="assets/icons/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/351silverstar/"><img src="assets/icons/instagram-icon.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="https://aircadetsontario.ca/">Air Cadet League of Canada, Ontario Provincial Committee</a></li>
+        <li><a href="https://aircadetleague.com/">Air Cadet League of Canada</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>DISCLAIMER</h3>
+      <p>This is the official website of the civilian Squadron Sponsoring Committee for the 351 Silver Star Squadron - Unionville. This is not a Department of National Defence website. Squadron proprietary information and images may not be reproduced or used without permission.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 351 Silver Star Squadron - Unionville. All rights reserved.</p>
+  </div>
+</div>
+
+
+</body>
+</html>

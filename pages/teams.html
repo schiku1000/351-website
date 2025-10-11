@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+    <title>351 Silver Star - Teams</title>
+    <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+</head>
+<body>
+    <div id="header">
+        <div>
+            <div id="logo">
+                <img src="../assets/logo/logobanner.png" alt="Logo" onclick="window.location.href='../index.html'">
+            </div>
+            <div id="icons">
+                
+
+                <button onclick="signIn()" title="Sign In">
+                    <img src="../assets/icons/user.png" alt="Sign In">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="supporters.html">Supporters</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="teams.html">Teams</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="teams-hero">
+        <h1>Our Teams</h1>
+        <p>Discover the diverse range of specialized teams and activities available at 351 Silver Star Squadron</p>
+    </div>
+
+    <div class="teams-filter" id="teamsFilter">
+        <button class="filter-btn active" data-filter="all">All Teams</button>
+        <button class="filter-btn" data-filter="music">Music</button>
+        <button class="filter-btn" data-filter="sports">Sports</button>
+        <button class="filter-btn" data-filter="training">Training</button>
+        <button class="filter-btn" data-filter="drill">Drill</button>
+    </div>
+
+    <div class="teams-grid">
+        <div class="team-card" data-category="music" data-title="Marching Band" data-details="Band conducts weekly practices at Franklin Street Public School. The band meets weekly on Mondays from 1830-2130 hrs. Open to all cadets interested in music - instruments provided for beginners!">
+            <img src="../assets/teams/band.jpg" alt="Marching Band" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Mondays 1830-2130</div>
+                <div class="team-title">Marching Band</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="drill" data-title="Flag Party" data-details="Flag party practices every Monday at Franklin Street Public School from 1900-2130 hrs. Tryouts are held in the beginning of the training year. Learn precision drill and represent the squadron at ceremonial events.">
+            <img src="../assets/teams/flagparty.jpg" alt="Flag Party" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Mondays 1900-2130</div>
+                <div class="team-title">Flag Party</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="sports" data-title="Sports Night" data-details="Looking to stay active with your fellow cadets? Sports Night is back every Friday, and we want you there! They are held every Friday from 1900-2130 hrs at Franklin Street Public School. All fitness levels welcome!">
+            <img src="../assets/teams/sportsteam.jpg" alt="Sports Night" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Fridays 1900-2130</div>
+                <div class="team-title">Sports Night</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="sports" data-title="Biathlon Team" data-details="The 351 Biathlon Team will hold practices on Saturdays from 1830-2100 hrs, starting 20 Sept, 2025. Location:145 Royal Crest Court, Unit 28, Markham, ON. Combine cross-country skiing and marksmanship in this exciting winter sport.">
+            <img src="../assets/teams/biathalon.jpg" alt="Biathlon Team" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Saturdays 1830-2100</div>
+                <div class="team-title">Biathlon</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="training" data-title="Marksmanship Team" data-details="Marksmanship team holds practices on Saturdays from 1830-2100 hrs at 145 Royal Crest Court, Unit 28, Markham, ON. After initial training, cadets can participate in additional training and tryouts. Squadron allocated 3 teams of 5 members.">
+            <img src="../assets/teams/marksmanship.jpg" alt="Marksmanship Team" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Saturdays 1830-2100</div>
+                <div class="team-title">Marksmanship</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="drill" data-title="Drill Team" data-details="Drill team tryout will commence in the upcoming training year. Practices are held on Friday evenings. Master precision drill movements and compete in drill competitions.">
+            <img src="../assets/teams/drillteam.jpg" alt="Drill Team" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Fridays 1900-2100 hrs</div>
+                <div class="team-title">Drill Team</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="training" data-title="Effective Speaking Team" data-details="Opportunity to learn, practice and improve public speaking skills. Learn from Toastmasters International instructor. Virtual sessions every Thursday from November to January. Build confidence and communication skills essential for leadership.">
+            <img src="../assets/teams/speaking.jpg" alt="Effective Speaking Team" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">Thursdays</div>
+                <div class="team-title">Effective Speaking</div>
+            </div>
+        </div>
+        
+        <div class="team-card" data-category="training" data-title="Ground School" data-details="The National Ground School Program (NGSP) is required for those applying for the Glider Pilot Training Course (GPTC) or the Power Pilot Training Course (PPTC) this training year. The national lesson runs from November 2025 to January 2026. It concludes with a qualifying exam in January/February 2026, which forms part of the overall selection score.">
+            <img src="../assets/teams/groundschool.jpg" alt="Ground School" class="team-image" onerror="this.style.display='none'">
+            <div class="team-content">
+                <div class="team-subtitle">November to January</div>
+                <div class="team-title">Ground School</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2 id="popup-title"></h2>
+            <div class="team-schedule">
+                <h4>🕐 Schedule & Details</h4>
+                <p id="popup-schedule"></p>
+            </div>
+            <p id="popup-details"></p>
+        </div>
+    </div>
+
+<div id="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>LOCATION</h3>
+      <p><a href="https://www.google.com/maps/place/Bur+Oak+Secondary+School/@43.8970623,-79.2811679,17z/data=!3m2!4b1!5s0x89d529e2d422ea0d:0x48ba8f34c459e4fa!4m6!3m5!1s0x89d5294cb29440af:0x18523a6edc80077c!8m2!3d43.8970585!4d-79.2785876!16s%2Fm%2F051xq5w?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D">Bur Oak Secondary School</a></p>
+      <p>933 Bur Oak Avenue</p>
+      <p>Markham, ON L6E 1G4</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>SOCIAL LINKS</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/351SilverStar"><img src="../assets/icons/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/351silverstar/"><img src="../assets/icons/instagram-icon.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="https://aircadetsontario.ca/">Air Cadet League of Canada, Ontario Provincial Committee</a></li>
+        <li><a href="https://aircadetleague.com/">Air Cadet League of Canada</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>DISCLAIMER</h3>
+      <p>This is the official website of the civilian Squadron Sponsoring Committee for the 351 Silver Star Squadron - Unionville. This is not a Department of National Defence website. Squadron proprietary information and images may not be reproduced or used without permission.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 351 Silver Star Squadron - Unionville. All rights reserved.</p>
+  </div>
+</div>
+
+</body>
+</html>

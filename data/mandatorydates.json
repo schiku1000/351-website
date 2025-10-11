@@ -1,0 +1,60 @@
+{
+  "mandatoryDates": [
+    {
+      "image": "mandatorydate1.jpg",
+      "title": "First Parade Night", 
+      "subtitle": "September 10, 2025",
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about first parade night..."
+    },
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    },
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    },
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    },
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    }, 
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    }, 
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    },
+    {
+      "image": "mandatorydate2.jpg",
+      "title": "Uniform Fitting",
+      "subtitle": "September 17, 2025", 
+      "time": "6:30 PM - 9:30 PM",
+      "details": "Full details about uniform fitting..."
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+    <title>351 Silver Star - Contact</title>
+    <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div>
+            <div id="logo">
+                <img src="../assets/logo/logobanner.png" alt="Logo" onclick="window.location.href='../index.html'">
+            </div>
+            <div id="icons">
+                
+
+                <button onclick="signIn()" title="Sign In">
+                    <img src="../assets/icons/user.png" alt="Sign In">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="supporters.html">Supporters</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="teams.html">Teams</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>Find our locations, parade times, and contact information</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="locations-grid">
+            <!-- Parade Nights Location -->
+            <div class="location-card" id="parade-location">
+                <div class="location-header">
+                    <h2>Parade Nights</h2>
+                    <p>Tuesday Evenings</p>
+                </div>
+                <div class="location-content">
+                    <div class="location-details">
+                        <h3>Bur Oak Secondary School</h3>
+                        <div class="location-address">
+                            <p>933 Bur Oak Ave.<br>
+                            Markham, ON<br>
+                            L6E 1G4</p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Parade Times</h4>
+                            <p><strong>Tuesdays:</strong> 6:30 PM - 9:30 PM</p>
+                        </div>
+                        <p>Bur Oak Secondary School is on Bur Oak Avenue, in the center of McCowan Road, Markham Road, 16th Avenue, and Major Mackenzie Drive East.</p>
+                    </div>
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2874.636032656254!2d-79.3421118236848!3d43.90592097110077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6607c5c1c6c1f%3A0x8e1e2d9d5b5b5b5b!2sBur%20Oak%20Secondary%20School!5e0!3m2!1sen!2sca!4v1710000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Practices Location -->
+            <div class="location-card" id="team-practices">
+                <div class="location-header">
+                    <h2>Team Practices</h2>
+                    <p>Monday & Friday Evenings</p>
+                </div>
+                <div class="location-content">
+                    <div class="location-details">
+                        <h3>Franklin Street Public School</h3>
+                        <div class="location-address">
+                            <p>21 Franklin Street<br>
+                            Markham, ON<br>
+                            L3P 2S7</p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Practice Times</h4>
+                            <p><strong>Mondays & Fridays:</strong> 6:30 PM - 9:30 PM</p>
+                        </div>
+                        <p>Squadron team practices are held Monday and Friday nights at Franklin Street Public School.</p>
+                    </div>
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.123456789012!2d-79.34567890123456!3d43.90123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6607c5c1c6c1f%3A0x8e1e2d9d5b5b5b5b!2sFranklin%20Street%20Public%20School!5e0!3m2!1sen!2sca!4v1710000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Administrative Office -->
+            <div class="location-card" id="admin-office">
+                <div class="location-header">
+                    <h2>Administrative Office</h2>
+                    <p>Squadron Stores</p>
+                </div>
+                <div class="location-content">
+                    <div class="location-details">
+                        <h3>Air Cadet 351 Squadron Stores</h3>
+                        <div class="location-address">
+                            <p>Unit 5 & 6<br>
+                            185 Riviera Dr<br>
+                            Markham, Ontario<br>
+                            L3R 5J6</p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Office Hours</h4>
+                            <p><strong>Administrative and supply nights</strong> are held at the squadron stores.</p>
+                        </div>
+                        <div class="location-phone">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(416) 989-9873</span>
+                        </div>
+                        <p class="contact-note">Phone is only active on Tuesday evenings during parade nights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mailing Address -->
+            <div class="location-card" id="mailing-address">
+                <div class="location-header">
+                    <h2>Mailing Address</h2>
+                    <p>Send Correspondence To</p>
+                </div>
+                <div class="location-content">
+                    <div class="location-details">
+                        <h3>Commanding Officer</h3>
+                        <div class="location-address">
+                            <p>351 Silver Star RC(Air)CS<br>
+                            P.O. Box 111,<br>
+                            5694 Highway 7, Unit 4,<br>
+                            Markham ON<br>
+                            L3P 1B4</p>
+                        </div>
+                        <p>Please address all official correspondence to the Commanding Officer at this address.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-info" id="contactInfo">
+            <h2>Need to Get in Touch?</h2>
+            <p>For general inquiries, please contact us during parade nights at Bur Oak Secondary School or reach out to the squadron sponsoring committee.</p>
+            <p>For specific questions about teams, training, or cadet activities, please speak directly with our officers during parade nights.</p>
+            <div class="contact-note">
+                <p>Please note: Our phone line is only active on Tuesday evenings during parade nights. For urgent matters outside these hours, please email the squadron sponsoring committee.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="floating-btn" onclick="scrollToTop()" title="Back to Top">↑</button>
+
+<div id="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>LOCATION</h3>
+      <p><a href="https://www.google.com/maps/place/Bur+Oak+Secondary+School/@43.8970623,-79.2811679,17z/data=!3m2!4b1!5s0x89d529e2d422ea0d:0x48ba8f34c459e4fa!4m6!3m5!1s0x89d5294cb29440af:0x18523a6edc80077c!8m2!3d43.8970585!4d-79.2785876!16s%2Fm%2F051xq5w?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D">Bur Oak Secondary School</a></p>
+      <p>933 Bur Oak Avenue</p>
+      <p>Markham, ON L6E 1G4</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>SOCIAL LINKS</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/351SilverStar"><img src="../assets/icons/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/351silverstar/"><img src="../assets/icons/instagram-icon.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="https://aircadetsontario.ca/">Air Cadet League of Canada, Ontario Provincial Committee</a></li>
+        <li><a href="https://aircadetleague.com/">Air Cadet League of Canada</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>DISCLAIMER</h3>
+      <p>This is the official website of the civilian Squadron Sponsoring Committee for the 351 Silver Star Squadron - Unionville. This is not a Department of National Defence website. Squadron proprietary information and images may not be reproduced or used without permission.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 351 Silver Star Squadron - Unionville. All rights reserved.</p>
+  </div>
+</div>
+
+</body>
+</html>

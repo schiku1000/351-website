@@ -1,0 +1,68 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "image": "assets/announcements/announcement1.png",
+      "subtitle": "Every Friday",
+      "title": "Sports Night",
+      "popupTitle": "Weekly Sports Night - Come out and play!",
+      "popupDetails": "Details for Announcement 1."
+    },
+    {
+      "id": 2,
+      "image": "assets/announcements/announcement2.jpg",
+      "subtitle": "Announcement 2",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 2."
+    },
+    {
+      "id": 3,
+      "image": "assets/announcements/announcement3.jpg",
+      "subtitle": "Announcement 3",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 3."
+    },
+    {
+      "id": 4,
+      "image": "assets/announcements/announcement4.jpg",
+      "subtitle": "Announcement 4",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 4."
+    },
+    {
+      "id": 5,
+      "image": "assets/announcements/announcement5.jpg",
+      "subtitle": "Announcement 5",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 5."
+    },
+    {
+      "id": 6,
+      "image": "assets/announcements/announcement6.jpg",
+      "subtitle": "Announcement 6",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 6."
+    },
+    {
+      "id": 7,
+      "image": "assets/announcements/announcement7.jpg",
+      "subtitle": "Announcement 7",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 7."
+    },
+    {
+      "id": 8,
+      "image": "assets/announcements/announcement8.jpg",
+      "subtitle": "Announcement 8",
+      "title": "Placeholder",
+      "popupTitle": "Placeholder",
+      "popupDetails": "Details for Announcement 8."
+    }
+  ]
+}

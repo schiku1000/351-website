@@ -2,37 +2,65 @@
   "mandatoryDates": [
     {
       "id": 1,
-      "title": "351 Birthday",
-      "subtitle": "September 10, 2025",
-      "time": "All Day",
+      "title": "Advanced Leadership Program (PO503)",
+      "subtitle": "Complete",
+      "time": "Completed",
       "image": "assets/mandatorydates/mandatorydate1.jpg"
     },
     {
       "id": 2,
-      "title": "ACR",
-      "subtitle": "September 17, 2025",
-      "time": "6:30 PM - 9:30 PM",
+      "title": "Aircrew Survival Exercise (FTX)",
+      "subtitle": "Complete",
+      "time": "Completed",
       "image": "assets/mandatorydates/mandatorydate1.jpg"
     },
     {
       "id": 3,
-      "title": "ACR",
-      "subtitle": "September 24, 2025",
-      "time": "6:30 PM - 9:30 PM",
+      "title": "Marksmanship Day",
+      "subtitle": "Complete",
+      "time": "Completed",
       "image": "assets/mandatorydates/mandatorydate1.jpg"
     },
     {
       "id": 4,
-      "title": "ACR",
-      "subtitle": "October 1, 2025",
-      "time": "6:30 PM - 9:30 PM",
+      "title": "Remembrance Day Parade",
+      "subtitle": "Complete",
+      "time": "Completed",
       "image": "assets/mandatorydates/mandatorydate1.jpg"
     },
     {
       "id": 5,
-      "title": "ACR",
-      "subtitle": "October 8, 2025",
-      "time": "6:30 PM - 9:30 PM",
+      "title": "CAF Engagement",
+      "subtitle": "Complete",
+      "time": "Completed",
+      "image": "assets/mandatorydates/mandatorydate1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Santa Clause Parade",
+      "subtitle": "November 30, 2024",
+      "time": "All Day",
+      "image": "assets/mandatorydates/mandatorydate1.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Advanced Leadership Program (PO513)",
+      "subtitle": "Complete",
+      "time": "Completed",
+      "image": "assets/mandatorydates/mandatorydate1.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Air Elemental Weekend",
+      "subtitle": "May 3-4, 2025",
+      "time": "Weekend Event",
+      "image": "assets/mandatorydates/mandatorydate1.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Annual Cadet Review (ACR)",
+      "subtitle": "June 8, 2025",
+      "time": "All Day",
       "image": "assets/mandatorydates/mandatorydate1.jpg"
     }
   ]

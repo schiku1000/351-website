@@ -2,24 +2,60 @@
   "announcements": [
     {
       "id": 1,
-      "title": "Weekly Sports Night - Come out and play!",
-      "subtitle": "Every Friday",
-      "details": "Join us every Friday for sports night! All cadets welcome to participate in various sports activities.",
+      "title": "351 Tagging Weekend",
+      "subtitle": "October 11, 2025",
+      "details": "The Tagging Weekend is the squadron's primary fundraising event, organized and managed by the Squadron Sponsoring Committee (SSC). Cadets are expected to complete at a minimum one (1) Tagging shift this fall.\n\nTagging Headquarters: Bur Oak Secondary. 933 Bur Oak Ave, Markham\n\nDress: Level One Cadets - Black and White. Civilian jacket if needed\nLevel 2 or above - C3 (tunic, ribbon, shirt, and tie), Cadet Parka if needed.",
       "image": "assets/announcements/announcement1.png"
     },
     {
       "id": 2,
-      "title": "Supply Night Reminder",
-      "subtitle": "September 11, 2025",
-      "details": "Next supply night is on September 11th from 6:30 PM to 8:30 PM at the Squadron Office.",
-      "image": "assets/announcements/announcement1.png"
+      "title": "Marksmanship Workshop",
+      "subtitle": "October 10, 2025",
+      "details": "351 will hold a series of marksmanship workshops on 15, 22, and 29 of October 2025. This workshop series is designed to help cadets who are interested in marksmanship and have shown strong shooting skills further develop their abilities. Participants will receive focused coaching and practice opportunities to prepare for a competition tryout.\n\nCadets who wish to attend must sign up by 14 Oct 2025 and must be available for all 3 sessions.\n\nDate: 15, 22, 29 of October 2025\nTime: 1900 hr to 2130 hrs\nLocation: St. Julia Billart Catholic School Gym\nAddress: 2070 Bur Oak Ave, Markham\n\nWhat to bring: Health Card, water bottle, pens, and a notebook.\nDress: Sports wear (T-shirt, long track pants, and non-marked running shoes)",
+      "image": "assets/announcements/announcement2.png"
     },
     {
       "id": 3,
-      "title": "Fall Training Schedule",
-      "subtitle": "Starting September 10",
-      "details": "Fall training schedule is now available. Check the calendar for details.",
-      "image": "assets/announcements/announcement1.png"
+      "title": "Weekly Sports Night - Come out and play!",
+      "subtitle": "Every Friday",
+      "details": "Hey Cadets! Looking to stay active with your fellow cadets? Sports Night is back every Friday, and we want you there! Whether you're into basketball, soccer, volleyball or just want to try something new, this is your chance to get involved, have fun, and even discover a new favourite sport!\n\nWhen: Every Friday\nWhere: Franklin Street Public School. 21 Franklin St, Markham.\nTime: 1900 - 2130 hrs\n\nTo help us plan and bring the sports you want to play, please take 30 seconds to complete this SURVEY.",
+      "image": "assets/announcements/announcement3.png"
+    },
+    {
+      "id": 4,
+      "title": "Online Ground School 2025-26",
+      "subtitle": "September 26, 2025",
+      "details": "The National Ground School Program (NGSP) is required for those applying for the Glider Pilot Training Course (GPTC) or the Power Pilot Training Course (PPTC) this training year. The national lesson runs from November 2025 to January 2026. It concludes with a qualifying exam in January/February 2026, which forms part of the overall selection score.\n\nSign-up for the National Ground School Program is due by 10 Oct 2025.\n\nFormat: Online\nLesson Period: From 1 November 2025 to 21 January 2026\nQualifying Exam: Delivered 1st week in February (dates TBD) at local squadron\n\n351 Silver Star Squadron will run local classes to support our future pilots. Training is supported by licensed pilots and flight instructors.",
+      "image": "assets/announcements/announcement4.png"
+    },
+    {
+      "id": 5,
+      "title": "351 Gliding Day 2",
+      "subtitle": "October 11, 2025",
+      "details": "A gliding day will be held on Saturday, 11 Oct 2025 at CFB Borden. Transportation and lunch will be provided.\n\nCadets who are interested in participating are required to sign up by Friday, 3 October 2025. The Joining Instruction (JI) will only be sent to the selected cadets via Cadet365 email.\n\nPlease note that sign-up does not guarantee a spot.",
+      "image": "assets/announcements/announcement5.png"
+    },
+    {
+      "id": 6,
+      "title": "2025 Biathlon Team - Sign-up",
+      "subtitle": "September 15, 2025",
+      "details": "The 351 Biathlon Team will hold practices on Saturdays, starting 20 Sept, 2025. Selected cadets will compete in the Central Ontario Area Biathlon Competition in Nov 2025.\n\nPractices: Saturdays, beginning 20 Sept\nTime: 1830 - 2100 hrs\nLocation: 145 Royal Crest Court, Unit 28, Markham, ON.\nSelection: Try-out will be held in Oct\nDress: Athletic wear and running shoes. Cadets are recommended to dress in layers.\n\nPhase one of training will be endurance training in preparation for the Run & Shoot Competition. Cadets who are interested in the training should sign up by 18 Sept.",
+      "image": "assets/announcements/announcement6.png"
+    },
+    {
+      "id": 7,
+      "title": "Uniform Exchange",
+      "subtitle": "September 6, 2025",
+      "details": "Cadets with ill-fitting uniform parts may submit an exchange request for a better size through the Dashboard. To do this, click the 'Exchange' button located at the bottom of the dashboard under the 'Supply' section.\n\nPick-up Location: All exchanges must be picked up from the Squadron Office on a designated Supply Night.\nSquadron Office Address: Unit 5 - 185 Riviera Drive, Markham, ON L3R 5J6\n\nSupply Night Schedule:\n- 11 September 2025\n- 25 September 2025\n- 23 October 2025\n- 20 November 2025\n- 11 December 2025\nTime: 6:30 pm to 8:30 pm\n\nWalk-Ins: Cadets may drop by during Supply Hours without a prior request, but availability cannot be guaranteed.",
+      "image": "assets/announcements/announcement7.png"
+    },
+    {
+      "id": 8,
+      "title": "2025 Year End BBQ Night",
+      "subtitle": "June 24, 2025",
+      "details": "Join us as we wrap up the training year with a fun and relaxing BBQ night! Enjoy great food, games, and company as we celebrate everyone's achievements.\n\nDate: Tuesday, 24 June 2025\nTime: 1830 - 2130 hrs\nLocation: Cornerstone Community Church - Parking Lot. 9680 Ninth Line, Markham, ON\n\nRation: Free of charge for 351 staff and cadets. Sign-up is required.\nParents are welcome to join. Please sign up in advance. Tickets are $15 per person, payable at the event.",
+      "image": "assets/announcements/announcement8.png"
     }
+    
   ]
 }

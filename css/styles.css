@@ -491,9 +491,9 @@ html, body {
 }
 
 .announcements-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
     gap: 30px;
     padding: 40px 30px;
     max-width: 1600px;
@@ -502,16 +502,15 @@ html, body {
 
 .announcement-card {
     position: relative;
+    width: 350px;
+    height: 350px;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    min-height: 280px;
     box-shadow: 0 6px 25px rgba(0,0,0,0.15);
     background: #222;
     transition: all 0.4s ease;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
+    flex-shrink: 0;
 }
 
 .announcement-card:hover {

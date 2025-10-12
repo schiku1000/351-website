@@ -150,14 +150,14 @@ function initializeHomePage() {
 
     // Mandatory dates functionality
     const mandatoryDates = [
-        { image: "../assets/mandatorydates/mandatorydate1.jpg", title: "351 Birthday", subtitle: "September 10, 2025", time: "All Day" },
-        { image: "../assets/mandatorydates/mandatorydate2.jpg", title: "ACR", subtitle: "September 17, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "../assets/mandatorydates/mandatorydate3.jpg", title: "ACR", subtitle: "September 24, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "../assets/mandatorydates/mandatorydate4.jpg", title: "ACR", subtitle: "October 1, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "../assets/mandatorydates/mandatorydate5.jpg", title: "ACR", subtitle: "October 8, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "../assets/mandatorydates/mandatorydate6.jpg", title: "ACR", subtitle: "October 15, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "../assets/mandatorydates/mandatorydate7.jpg", title: "ACR", subtitle: "October 22, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "../assets/mandatorydates/mandatorydate8.jpg", title: "ACR", subtitle: "November 5, 2025", time: "6:30 PM - 9:30 PM" }
+        { image: "assets/mandatorydates/mandatorydate1.jpg", title: "351 Birthday", subtitle: "September 10, 2025", time: "All Day" },
+        { image: "assets/mandatorydates/mandatorydate2.jpg", title: "ACR", subtitle: "September 17, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "assets/mandatorydates/mandatorydate3.jpg", title: "ACR", subtitle: "September 24, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "assets/mandatorydates/mandatorydate4.jpg", title: "ACR", subtitle: "October 1, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "assets/mandatorydates/mandatorydate5.jpg", title: "ACR", subtitle: "October 8, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "assets/mandatorydates/mandatorydate6.jpg", title: "ACR", subtitle: "October 15, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "assets/mandatorydates/mandatorydate7.jpg", title: "ACR", subtitle: "October 22, 2025", time: "6:30 PM - 9:30 PM" },
+        { image: "assets/mandatorydates/mandatorydate8.jpg", title: "ACR", subtitle: "November 5, 2025", time: "6:30 PM - 9:30 PM" }
     ];
 
     let page = 0;
@@ -248,21 +248,6 @@ function initializeHomePage() {
         }
         
         setTimeout(animateOnScroll, 100);
-    }
-
-    // Add click handlers for featured side cards
-    const featuredList = document.getElementById('featured-side-list');
-    if (featuredList) {
-        featuredList.addEventListener('click', function(e) {
-            const card = e.target.closest('.featured-side-card');
-            if (card) {
-                const title = card.querySelector('.featured-side-title').textContent;
-                const subtitle = card.querySelector('.featured-side-subtitle').textContent;
-                const time = card.querySelector('.featured-side-time').textContent;
-                
-                openPopup(title, `${subtitle}<br>${time}`);
-            }
-        });
     }
 
     // Initialize animations
@@ -608,7 +593,7 @@ function initializeTeamsPage() {
             if (schedule) {
                 popupDetails.innerHTML = `${details}<br><br><strong>Schedule:</strong> ${schedule}`;
             } else {
-                popupDetails.textContent = details;
+                popupDetails.innerHTML = details;
             }
 
             // Use BOTH methods to ensure popup shows

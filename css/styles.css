@@ -109,9 +109,31 @@ html, body {
 }
 
 #navbar.scrolled {
-    background-color: #0000009c; /* semi-transparent when scrolled */
+    background-color: #0000009c; 
+}
+/* scrolling animation */
+#navbar nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 0;
 }
 
+#navbar nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+#navbar nav ul li a:hover::after {
+    width: 100%;
+}
 
 #navbar nav {
     display: flex;

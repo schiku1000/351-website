@@ -1,12 +1,11 @@
 // Wait for DOM to be fully loaded before executing any code
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded');
     initializePageSpecificCode();
 });
 
-// global functions
-
+// Global functions
 function signIn() {
-    // Add sign in functionality here
     console.log('Sign in button clicked');
     alert('Sign in functionality coming soon.');
 }
@@ -14,7 +13,6 @@ function signIn() {
 function closePopup() {
     const popup = document.getElementById('popup');
     if (popup) {
-        // Reset ALL possible ways the popup can be shown
         popup.classList.remove('active');
         popup.style.display = 'none';
         
@@ -52,13 +50,25 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
 // Initialize page-specific code based on which page we're on
 function initializePageSpecificCode() {
-    setupGlobalEventListeners();    
-    // Check which page we're on and initialize accordingly
-    if (document.querySelector('.announcement-card')) {
+    console.log('Initializing page-specific code');
+    setupGlobalEventListeners();
+    
+    // Check if we're on the home page by looking for specific elements
+    const hasAnnouncements = document.getElementById('announcements') !== null;
+    const hasMainLanding = document.getElementById('mainlandingpage') !== null;
+    
+    console.log('Has announcements element:', hasAnnouncements);
+    console.log('Has main landing element:', hasMainLanding);
+    
+    if (hasAnnouncements || hasMainLanding) {
+        console.log('Initializing home page');
         initializeHomePage();
     }
+    
+    // Initialize other pages
     if (document.querySelector('.section-card')) {
         initializeAboutPage();
     }
@@ -76,16 +86,14 @@ function initializePageSpecificCode() {
     }
 }
 
-// Global event listeners that work on all pages
+// Global event listeners
 function setupGlobalEventListeners() {
-    // Close popup with Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closePopup();
         }
     });
 
-    // Scroll to top button functionality
     window.addEventListener('scroll', function() {
         const scrollBtn = document.querySelector('.floating-btn');
         if (scrollBtn) {
@@ -97,7 +105,6 @@ function setupGlobalEventListeners() {
         }
     });
 
-    // Setup floating button if it exists
     const floatingBtn = document.querySelector('.floating-btn');
     if (floatingBtn) {
         floatingBtn.addEventListener('click', scrollToTop);
@@ -106,13 +113,180 @@ function setupGlobalEventListeners() {
 
 // HOME PAGE CODE
 function initializeHomePage() {
+    console.log('HOME PAGE: Starting initialization');
+    
+    // Load JSON data
+    loadAnnouncements();
+    loadMandatoryDates();
+    
+    // Setup popup
+    const popup = document.getElementById('popup');
+    if (popup) {
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+    }
+}
+
+// Load announcements from JSON
+async function loadAnnouncements() {
+    try {
+        console.log('Loading announcements from data/announcements.json');
+        const response = await fetch('data/announcements.json');
+        
+        if (!response.ok) {
+            throw new Error('Failed to load announcements: ' + response.status);
+        }
+        
+        const data = await response.json();
+        console.log('Successfully loaded announcements data');
+        renderAnnouncements(data.announcements);
+    } catch (error) {
+        console.error('Error loading announcements:', error);
+        const container = document.getElementById('announcements');
+        if (container) container.innerHTML = '';
+    }
+}
+
+// Load mandatory dates from JSON
+async function loadMandatoryDates() {
+    try {
+        console.log('Loading mandatory dates from data/mandatorydates.json');
+        const response = await fetch('data/mandatorydates.json');
+        
+        if (!response.ok) {
+            throw new Error('Failed to load mandatory dates: ' + response.status);
+        }
+        
+        const data = await response.json();
+        console.log('Successfully loaded mandatory dates data');
+        renderMandatoryDates(data.mandatoryDates);
+    } catch (error) {
+        console.error('Error loading mandatory dates:', error);
+        const container = document.getElementById('featured-side-list');
+        if (container) container.innerHTML = '';
+    }
+}
+
+// Render announcements to the page
+function renderAnnouncements(announcements) {
+    const container = document.getElementById('announcements');
+    if (!container) {
+        console.error('Announcements container not found');
+        return;
+    }
+    
+    console.log('Rendering ' + announcements.length + ' announcements');
+    
+    if (!announcements || announcements.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    container.innerHTML = '';
+    
+    announcements.forEach(announcement => {
+        const card = document.createElement('div');
+        card.className = 'announcement-card';
+        card.setAttribute('data-title', announcement.title);
+        card.setAttribute('data-details', announcement.details);
+        
+        card.innerHTML = `
+            <div class="announcement-bg" style="background-image: url('${announcement.image}');"></div>
+            <div class="announcement-content">
+                <div class="announcement-subtitle">${announcement.subtitle}</div>
+                <div class="announcement-title">${announcement.title}</div>
+            </div>
+        `;
+        
+        card.addEventListener('click', () => {
+            openAnnouncementPopup(announcement.title, announcement.details);
+        });
+        
+        container.appendChild(card);
+    });
+}
+
+// Render mandatory dates to the page
+function renderMandatoryDates(mandatoryDates) {
+    const container = document.getElementById('featured-side-list');
+    if (!container) {
+        console.error('Mandatory dates container not found');
+        return;
+    }
+    
+    console.log('Rendering ' + mandatoryDates.length + ' mandatory dates');
+    
+    if (!mandatoryDates || mandatoryDates.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    let currentPage = 0;
+    const itemsPerPage = 4;
+
+    function renderCurrentPage() {
+        container.innerHTML = '';
+        const start = currentPage * itemsPerPage;
+        const end = Math.min(start + itemsPerPage, mandatoryDates.length);
+        
+        for (let i = start; i < end; i++) {
+            const date = mandatoryDates[i];
+            const card = document.createElement('div');
+            card.className = 'featured-side-card';
+            card.innerHTML = `
+                <div class="featured-side-bg" style="background-image:url('${date.image}')"></div>
+                <div class="featured-side-content">
+                    <div class="featured-side-title">${date.title}</div>
+                    <div class="featured-side-subtitle">${date.subtitle}</div>
+                    <div class="featured-side-time">${date.time}</div>
+                </div>
+            `;
+            container.appendChild(card);
+        }
+    }
+
+    const prevBtn = document.getElementById('dates-left');
+    const nextBtn = document.getElementById('dates-right');
+    
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentPage = currentPage > 0 ? currentPage - 1 : Math.ceil(mandatoryDates.length / itemsPerPage) - 1;
+            renderCurrentPage();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentPage = (currentPage + 1) * itemsPerPage < mandatoryDates.length ? currentPage + 1 : 0;
+            renderCurrentPage();
+        });
+        
+        renderCurrentPage();
+    } else {
+        mandatoryDates.forEach(date => {
+            const card = document.createElement('div');
+            card.className = 'featured-side-card';
+            card.innerHTML = `
+                <div class="featured-side-bg" style="background-image:url('${date.image}')"></div>
+                <div class="featured-side-content">
+                    <div class="featured-side-title">${date.title}</div>
+                    <div class="featured-side-subtitle">${date.subtitle}</div>
+                    <div class="featured-side-time">${date.time}</div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+}
+
+// Open announcement popup
+function openAnnouncementPopup(title, details) {
     const popup = document.getElementById('popup');
     const popupTitle = document.getElementById('popup-title');
     const popupDetails = document.getElementById('popup-details');
-
-    if (!popup || !popupTitle || !popupDetails) return;
-
-    function openPopup(title, details) {
+    
+    if (popup && popupTitle && popupDetails) {
         popupTitle.textContent = title;
         popupDetails.textContent = details;
         popup.style.display = 'flex';
@@ -125,174 +299,14 @@ function initializeHomePage() {
             }
         }, 50);
     }
-
-    // Load announcements from JSON
-    async function loadAnnouncements() {
-        try {
-            const response = await fetch('./data/announcements.json');
-            if (!response.ok) throw new Error('Failed to fetch');
-            const data = await response.json();
-            renderAnnouncements(data.announcements);
-        } catch (error) {
-            console.error('Error loading announcements:', error);
-            document.getElementById('announcements').innerHTML = '';
-        }
-    }
-
-    // Render announcements to the page
-    function renderAnnouncements(announcements) {
-        const container = document.getElementById('announcements');
-        if (!container || !announcements || announcements.length === 0) return;
-
-        container.innerHTML = '';
-        
-        announcements.forEach(announcement => {
-            const card = document.createElement('div');
-            card.className = 'announcement-card';
-            card.setAttribute('data-title', announcement.title);
-            card.setAttribute('data-details', announcement.details);
-            
-            card.innerHTML = `
-                <div class="announcement-bg" style="background-image: url('${announcement.image}');"></div>
-                <div class="announcement-content">
-                    <div class="announcement-subtitle">${announcement.subtitle}</div>
-                    <div class="announcement-title">${announcement.title}</div>
-                </div>
-            `;
-            
-            card.addEventListener('click', () => {
-                openPopup(announcement.title, announcement.details);
-            });
-            
-            container.appendChild(card);
-        });
-
-        setTimeout(initializeAnimations, 100);
-    }
-
-    // Load mandatory dates from JSON
-    async function loadMandatoryDates() {
-        try {
-            const response = await fetch('./data/mandatorydates.json');
-            if (!response.ok) throw new Error('Failed to fetch');
-            const data = await response.json();
-            initializeMandatoryDates(data.mandatoryDates);
-        } catch (error) {
-            console.error('Error loading mandatory dates:', error);
-            // No fallback - just don't show anything
-            const list = document.getElementById('featured-side-list');
-            if (list) list.innerHTML = '';
-        }
-    }
-
-    // Initialize mandatory dates with pagination
-    function initializeMandatoryDates(mandatoryDates) {
-        if (!mandatoryDates || mandatoryDates.length === 0) return;
-        
-        let page = 0;
-        const perPage = 4;
-
-        function renderMandatoryDates() {
-            const list = document.getElementById('featured-side-list');
-            if (!list) return;
-            
-            list.innerHTML = '';
-            const start = page * perPage;
-            const end = Math.min(start + perPage, mandatoryDates.length);
-            
-            for (let i = start; i < end; i++) {
-                const date = mandatoryDates[i];
-                const card = document.createElement('div');
-                card.className = 'featured-side-card';
-                card.innerHTML = `
-                    <div class="featured-side-bg" style="background-image:url('${date.image}')"></div>
-                    <div class="featured-side-content">
-                        <div class="featured-side-title">${date.title}</div>
-                        <div class="featured-side-subtitle">${date.subtitle}</div>
-                        <div class="featured-side-time">${date.time}</div>
-                    </div>
-                `;
-                list.appendChild(card);
-            }
-        }
-
-        function navigateDates(direction) {
-            const totalPages = Math.ceil(mandatoryDates.length / perPage);
-            
-            if (direction === 'next') {
-                page = (page + 1) * perPage < mandatoryDates.length ? page + 1 : 0;
-            } else {
-                page = page > 0 ? page - 1 : totalPages - 1;
-            }
-            
-            renderMandatoryDates();
-        }
-
-        const datesLeft = document.getElementById('dates-left');
-        const datesRight = document.getElementById('dates-right');
-        
-        if (datesLeft && datesRight) {
-            datesLeft.addEventListener('click', () => navigateDates('prev'));
-            datesRight.addEventListener('click', () => navigateDates('next'));
-            renderMandatoryDates();
-        }
-    }
-
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.announcement-card, .featured-main, .featured-side');
-        
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.style.opacity = "1";
-                element.style.transform = "translateY(0)";
-            }
-        });
-    }
-
-    function initializeAnimations() {
-        document.querySelectorAll('.announcement-card').forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-        });
-        
-        const featuredMain = document.querySelector('.featured-main');
-        const featuredSide = document.querySelector('.featured-side');
-        
-        if (featuredMain) {
-            featuredMain.style.opacity = "0";
-            featuredMain.style.transform = "translateX(-30px)";
-            featuredMain.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-        }
-        
-        if (featuredSide) {
-            featuredSide.style.opacity = "0";
-            featuredSide.style.transform = "translateX(30px)";
-            featuredSide.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-        }
-        
-        setTimeout(animateOnScroll, 100);
-    }
-
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            closePopup();
-        }
-    });
-
-    // Load the data
-    loadAnnouncements();
-    loadMandatoryDates();
-
-    window.addEventListener('scroll', animateOnScroll);
 }
+
+// Rest of your page-specific code remains the same...
+// [Keep all the other functions: initializeAboutPage, initializeCalendarPage, etc.]
+// ... include all the other page initialization functions from your original code
 
 // ABOUT US PAGE CODE
 function initializeAboutPage() {
-    // Scroll animations
     function checkScroll() {
         const sections = document.querySelectorAll('.section-card');
         sections.forEach(section => {
@@ -305,7 +319,6 @@ function initializeAboutPage() {
         });
     }
 
-    // Add hover effects to staff members
     document.querySelectorAll('.staff-member').forEach(member => {
         member.addEventListener('mouseenter', function() {
             this.style.background = 'linear-gradient(135deg, #f8f9fa, #e9ecef)';
@@ -316,7 +329,6 @@ function initializeAboutPage() {
         });
     });
 
-    // Initialize animations
     window.addEventListener('scroll', checkScroll);
     checkScroll();
 }
@@ -339,7 +351,6 @@ function initializeCalendarPage() {
         }
 
         setupEventListeners() {
-            // View option buttons
             document.querySelectorAll('.view-option').forEach(button => {
                 button.addEventListener('click', (e) => {
                     this.switchView(e.target.dataset.view);
@@ -347,7 +358,6 @@ function initializeCalendarPage() {
                 });
             });
 
-            // Calendar frame load event
             this.calendarFrame.addEventListener('load', () => {
                 this.hideLoading();
             });
@@ -407,7 +417,6 @@ function initializeCalendarPage() {
                 });
             }, observerOptions);
 
-            // Observe elements for animation
             const elementsToAnimate = [
                 '#calendarControls',
                 '#calendar',
@@ -421,7 +430,6 @@ function initializeCalendarPage() {
                 }
             });
 
-            // Animate calendar immediately after load
             setTimeout(() => {
                 const calendar = document.getElementById('calendar');
                 if (calendar) {
@@ -431,10 +439,8 @@ function initializeCalendarPage() {
         }
     }
 
-    // Initialize calendar manager
     window.calendarManager = new CalendarManager();
 
-    // Add loading state to iframe
     const calendarFrame = document.getElementById('calendarFrame');
     if (calendarFrame) {
         calendarFrame.addEventListener('load', function() {
@@ -470,7 +476,6 @@ function initializeContactPage() {
                 });
             }, observerOptions);
 
-            // Observe elements for animation
             const elementsToAnimate = [
                 ...document.querySelectorAll('.location-card'),
                 '#contactInfo'
@@ -484,10 +489,8 @@ function initializeContactPage() {
         }
     }
 
-    // Initialize contact manager
     window.contactManager = new ContactManager();
 
-    // Add hover effects to location cards
     document.querySelectorAll('.location-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
@@ -519,14 +522,12 @@ function initializeTeamsPage() {
             this.setupAnimations();
             this.setupEnhancedPopup();
             
-            // Let CSS handle the initial display - don't force styles
             this.teams.forEach(team => {
                 team.classList.add('visible');
             });
         }
 
         setupEventListeners() {
-            // Filter buttons
             this.filterButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     this.filterTeams(e.target.dataset.filter);
@@ -534,7 +535,6 @@ function initializeTeamsPage() {
                 });
             });
 
-            // Team card clicks
             this.teams.forEach(team => {
                 team.addEventListener('click', () => {
                     const title = team.getAttribute('data-title');
@@ -546,11 +546,10 @@ function initializeTeamsPage() {
 
         filterTeams(category) {
             this.teams.forEach((team, index) => {
-                // Use CSS classes instead of inline styles
                 if (category === 'all' || team.dataset.category === category) {
                     setTimeout(() => {
                         team.classList.add('visible');
-                        team.style.display = ''; // Let CSS handle display
+                        team.style.display = '';
                     }, index * 100);
                 } else {
                     team.classList.remove('visible');
@@ -569,7 +568,6 @@ function initializeTeamsPage() {
         }
 
         setupAnimations() {
-            // Remove any inline styles that might interfere with CSS
             this.teams.forEach(team => {
                 team.style.opacity = '';
                 team.style.transform = '';
@@ -591,7 +589,6 @@ function initializeTeamsPage() {
                 });
             }, observerOptions);
 
-            // Observe filter and team cards
             const filterSection = document.getElementById('teamsFilter');
             if (filterSection) observer.observe(filterSection);
             
@@ -601,7 +598,6 @@ function initializeTeamsPage() {
         }
 
         setupEnhancedPopup() {
-            // Add schedule data to team cards
             document.querySelectorAll('.team-card').forEach(team => {
                 const subtitle = team.querySelector('.team-subtitle');
                 if (subtitle && !team.dataset.schedule) {
@@ -620,10 +616,8 @@ function initializeTeamsPage() {
                 return;
             }
 
-            // Set popup content
             popupTitle.textContent = title;
             
-            // Include schedule if available
             const schedule = team.dataset.schedule;
             if (schedule) {
                 popupDetails.innerHTML = `${details}<br><br><strong>Schedule:</strong> ${schedule}`;
@@ -631,11 +625,9 @@ function initializeTeamsPage() {
                 popupDetails.innerHTML = details;
             }
 
-            // Use BOTH methods to ensure popup shows
             popup.style.display = 'flex';
             popup.classList.add('active');
             
-            // Reset animation for popup content
             const popupContent = popup.querySelector('.popup-content');
             if (popupContent) {
                 setTimeout(() => {
@@ -646,11 +638,8 @@ function initializeTeamsPage() {
         }
     }
 
-
-    // Initialize teams manager
     window.teamsManager = new TeamsManager();
 
-    // Set up Teams-specific popup close handler
     const teamsPopup = document.getElementById('popup');
     if (teamsPopup) {
         teamsPopup.addEventListener('click', function(e) {
@@ -663,7 +652,6 @@ function initializeTeamsPage() {
 
 // SUPPORTERS PAGE CODE
 function initializeSupportersPage() {
-    // Scroll animations for supporter cards
     function checkScroll() {
         const sections = document.querySelectorAll('.supporter-logo');
         sections.forEach(section => {
@@ -676,7 +664,6 @@ function initializeSupportersPage() {
         });
     }
 
-    // Add hover effects to supporter logos
     document.querySelectorAll('.supporter-logo').forEach(logo => {
         logo.addEventListener('mouseenter', function() {
             this.style.background = 'linear-gradient(135deg, #0057b8, #003d82)';
@@ -691,18 +678,13 @@ function initializeSupportersPage() {
         });
     });
 
-    // Initialize animations
     window.addEventListener('scroll', checkScroll);
-    
-    // Initial check on page load
     setTimeout(checkScroll, 100);
 }
 
-
+// Navbar scroll effect
 window.addEventListener("scroll", () => {
     const navbar = document.getElementById("navbar");
-
-    // Keep transparent at top (scrollY <= 0), add background after scrolling
     if (window.scrollY > 0) {
         navbar.classList.add("scrolled");
     } else {

@@ -117,7 +117,6 @@ function initializeHomePage() {
         popupDetails.textContent = details;
         popup.style.display = 'flex';
         
-        // Add entrance animation
         setTimeout(() => {
             const popupContent = popup.querySelector('.popup-content');
             if (popupContent) {
@@ -127,89 +126,118 @@ function initializeHomePage() {
         }, 50);
     }
 
-    // Set up event listeners for cards
-    function setupCardListeners(selector) {
-        document.querySelectorAll(selector).forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.getAttribute('data-title');
-                const details = card.getAttribute('data-details');
-                openPopup(title, details);
-            });
-        });
+    // Load announcements from JSON
+    async function loadAnnouncements() {
+        try {
+            const response = await fetch('./data/announcements.json');
+            if (!response.ok) throw new Error('Failed to fetch');
+            const data = await response.json();
+            renderAnnouncements(data.announcements);
+        } catch (error) {
+            console.error('Error loading announcements:', error);
+            document.getElementById('announcements').innerHTML = '';
+        }
     }
 
-    setupCardListeners('.announcement-card');
-    setupCardListeners('.team-card');
+    // Render announcements to the page
+    function renderAnnouncements(announcements) {
+        const container = document.getElementById('announcements');
+        if (!container || !announcements || announcements.length === 0) return;
 
-    // Close popup when clicking outside
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            closePopup();
-        }
-    });
-
-    // Mandatory dates functionality
-    const mandatoryDates = [
-        { image: "assets/mandatorydates/mandatorydate1.jpg", title: "351 Birthday", subtitle: "September 10, 2025", time: "All Day" },
-        { image: "assets/mandatorydates/mandatorydate2.jpg", title: "ACR", subtitle: "September 17, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "assets/mandatorydates/mandatorydate3.jpg", title: "ACR", subtitle: "September 24, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "assets/mandatorydates/mandatorydate4.jpg", title: "ACR", subtitle: "October 1, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "assets/mandatorydates/mandatorydate5.jpg", title: "ACR", subtitle: "October 8, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "assets/mandatorydates/mandatorydate6.jpg", title: "ACR", subtitle: "October 15, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "assets/mandatorydates/mandatorydate7.jpg", title: "ACR", subtitle: "October 22, 2025", time: "6:30 PM - 9:30 PM" },
-        { image: "assets/mandatorydates/mandatorydate8.jpg", title: "ACR", subtitle: "November 5, 2025", time: "6:30 PM - 9:30 PM" }
-    ];
-
-    let page = 0;
-    const perPage = 4;
-
-    function renderMandatoryDates() {
-        const list = document.getElementById('featured-side-list');
-        if (!list) return;
+        container.innerHTML = '';
         
-        list.innerHTML = '';
-        const start = page * perPage;
-        const end = Math.min(start + perPage, mandatoryDates.length);
-        
-        for (let i = start; i < end; i++) {
-            const a = mandatoryDates[i];
+        announcements.forEach(announcement => {
             const card = document.createElement('div');
-            card.className = 'featured-side-card';
+            card.className = 'announcement-card';
+            card.setAttribute('data-title', announcement.title);
+            card.setAttribute('data-details', announcement.details);
+            
             card.innerHTML = `
-                <div class="featured-side-bg" style="background-image:url('${a.image}')"></div>
-                <div class="featured-side-content">
-                    <div class="featured-side-title">${a.title}</div>
-                    <div class="featured-side-subtitle">${a.subtitle}</div>
-                    <div class="featured-side-time">${a.time}</div>
+                <div class="announcement-bg" style="background-image: url('${announcement.image}');"></div>
+                <div class="announcement-content">
+                    <div class="announcement-subtitle">${announcement.subtitle}</div>
+                    <div class="announcement-title">${announcement.title}</div>
                 </div>
             `;
-            list.appendChild(card);
+            
+            card.addEventListener('click', () => {
+                openPopup(announcement.title, announcement.details);
+            });
+            
+            container.appendChild(card);
+        });
+
+        setTimeout(initializeAnimations, 100);
+    }
+
+    // Load mandatory dates from JSON
+    async function loadMandatoryDates() {
+        try {
+            const response = await fetch('./data/mandatorydates.json');
+            if (!response.ok) throw new Error('Failed to fetch');
+            const data = await response.json();
+            initializeMandatoryDates(data.mandatoryDates);
+        } catch (error) {
+            console.error('Error loading mandatory dates:', error);
+            // No fallback - just don't show anything
+            const list = document.getElementById('featured-side-list');
+            if (list) list.innerHTML = '';
         }
     }
 
-    function navigateDates(direction) {
-        const totalPages = Math.ceil(mandatoryDates.length / perPage);
+    // Initialize mandatory dates with pagination
+    function initializeMandatoryDates(mandatoryDates) {
+        if (!mandatoryDates || mandatoryDates.length === 0) return;
         
-        if (direction === 'next') {
-            page = (page + 1) * perPage < mandatoryDates.length ? page + 1 : 0;
-        } else {
-            page = page > 0 ? page - 1 : totalPages - 1;
+        let page = 0;
+        const perPage = 4;
+
+        function renderMandatoryDates() {
+            const list = document.getElementById('featured-side-list');
+            if (!list) return;
+            
+            list.innerHTML = '';
+            const start = page * perPage;
+            const end = Math.min(start + perPage, mandatoryDates.length);
+            
+            for (let i = start; i < end; i++) {
+                const date = mandatoryDates[i];
+                const card = document.createElement('div');
+                card.className = 'featured-side-card';
+                card.innerHTML = `
+                    <div class="featured-side-bg" style="background-image:url('${date.image}')"></div>
+                    <div class="featured-side-content">
+                        <div class="featured-side-title">${date.title}</div>
+                        <div class="featured-side-subtitle">${date.subtitle}</div>
+                        <div class="featured-side-time">${date.time}</div>
+                    </div>
+                `;
+                list.appendChild(card);
+            }
         }
+
+        function navigateDates(direction) {
+            const totalPages = Math.ceil(mandatoryDates.length / perPage);
+            
+            if (direction === 'next') {
+                page = (page + 1) * perPage < mandatoryDates.length ? page + 1 : 0;
+            } else {
+                page = page > 0 ? page - 1 : totalPages - 1;
+            }
+            
+            renderMandatoryDates();
+        }
+
+        const datesLeft = document.getElementById('dates-left');
+        const datesRight = document.getElementById('dates-right');
         
-        renderMandatoryDates();
+        if (datesLeft && datesRight) {
+            datesLeft.addEventListener('click', () => navigateDates('prev'));
+            datesRight.addEventListener('click', () => navigateDates('next'));
+            renderMandatoryDates();
+        }
     }
 
-    // Initialize date navigation
-    const datesLeft = document.getElementById('dates-left');
-    const datesRight = document.getElementById('dates-right');
-    
-    if (datesLeft && datesRight) {
-        datesLeft.addEventListener('click', () => navigateDates('prev'));
-        datesRight.addEventListener('click', () => navigateDates('next'));
-        renderMandatoryDates();
-    }
-
-    // Enhanced animations for page elements
     function animateOnScroll() {
         const elements = document.querySelectorAll('.announcement-card, .featured-main, .featured-side');
         
@@ -224,7 +252,6 @@ function initializeHomePage() {
         });
     }
 
-    // Initialize animations
     function initializeAnimations() {
         document.querySelectorAll('.announcement-card').forEach(card => {
             card.style.opacity = "0";
@@ -250,9 +277,17 @@ function initializeHomePage() {
         setTimeout(animateOnScroll, 100);
     }
 
-    // Initialize animations
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closePopup();
+        }
+    });
+
+    // Load the data
+    loadAnnouncements();
+    loadMandatoryDates();
+
     window.addEventListener('scroll', animateOnScroll);
-    initializeAnimations();
 }
 
 // ABOUT US PAGE CODE

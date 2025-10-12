@@ -2,67 +2,59 @@
   "announcements": [
     {
       "id": 1,
-      "image": "assets/announcements/announcement1.png",
+      "title": "Weekly Sports Night - Come out and play!",
       "subtitle": "Every Friday",
-      "title": "Sports Night",
-      "popupTitle": "Weekly Sports Night - Come out and play!",
-      "popupDetails": "Details for Announcement 1."
+      "details": "Join us every Friday for sports night! All cadets welcome to participate in various sports activities.",
+      "image": "assets/announcements/announcement1.png"
     },
     {
       "id": 2,
-      "image": "assets/announcements/announcement2.jpg",
-      "subtitle": "Announcement 2",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 2."
+      "title": "Supply Night Reminder",
+      "subtitle": "September 11, 2025",
+      "details": "Next supply night is on September 11th from 6:30 PM to 8:30 PM at the Squadron Office.",
+      "image": "assets/announcements/announcement2.jpg"
     },
     {
       "id": 3,
-      "image": "assets/announcements/announcement3.jpg",
-      "subtitle": "Announcement 3",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 3."
+      "title": "Fall Training Schedule",
+      "subtitle": "Starting September 10",
+      "details": "Fall training schedule is now available. Check the calendar for details.",
+      "image": "assets/announcements/announcement3.jpg"
     },
     {
       "id": 4,
-      "image": "assets/announcements/announcement4.jpg",
-      "subtitle": "Announcement 4",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 4."
+      "title": "Annual Ceremonial Review",
+      "subtitle": "Save the Date",
+      "details": "ACR preparations begin next month. All cadets are expected to participate.",
+      "image": "assets/announcements/announcement4.jpg"
     },
     {
       "id": 5,
-      "image": "assets/announcements/announcement5.jpg",
-      "subtitle": "Announcement 5",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 5."
+      "title": "Field Training Exercise",
+      "subtitle": "October 15-17, 2025",
+      "details": "Registration for the fall FTX is now open. Sign up with your flight commander.",
+      "image": "assets/announcements/announcement5.jpg"
     },
     {
       "id": 6,
-      "image": "assets/announcements/announcement6.jpg",
-      "subtitle": "Announcement 6",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 6."
+      "title": "Marksmanship Practice",
+      "subtitle": "Every Thursday",
+      "details": "Marksmanship team practices every Thursday from 6:30-8:30 PM.",
+      "image": "assets/announcements/announcement6.jpg"
     },
     {
       "id": 7,
-      "image": "assets/announcements/announcement7.jpg",
-      "subtitle": "Announcement 7",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 7."
+      "title": "Band Rehearsal",
+      "subtitle": "Weekly Sessions",
+      "details": "Band members: regular rehearsals continue every training night.",
+      "image": "assets/announcements/announcement7.jpg"
     },
     {
       "id": 8,
-      "image": "assets/announcements/announcement8.jpg",
-      "subtitle": "Announcement 8",
-      "title": "Placeholder",
-      "popupTitle": "Placeholder",
-      "popupDetails": "Details for Announcement 8."
+      "title": "Community Service",
+      "subtitle": "Upcoming Opportunities",
+      "details": "Community service events planned for November. Watch for sign-up sheets.",
+      "image": "assets/announcements/announcement8.jpg"
     }
   ]
 }

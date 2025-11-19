@@ -20,9 +20,23 @@ html, body {
     max-width: 100%;
 }
 
-signin {
+#signin {
     cursor: pointer;
-    background-color: red;
+    background: #0057b8;
+    color: white;
+    filter: invert(1);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Red Hat Display', Arial, sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#signin:hover {
+    background: #e63946;
+    transform: translateY(-2px);
+    filter: invert(1);
 }
 
 

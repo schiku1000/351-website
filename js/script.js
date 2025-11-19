@@ -682,6 +682,10 @@ function initializeSupportersPage() {
     setTimeout(checkScroll, 100);
 }
 
+function signIn() {
+    window.location.href = 'signin/signin.html';
+}
+
 // Navbar scroll effect
 window.addEventListener("scroll", () => {
     const navbar = document.getElementById("navbar");

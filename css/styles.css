@@ -20,6 +20,12 @@ html, body {
     max-width: 100%;
 }
 
+signin {
+    cursor: pointer;
+    background-color: red;
+}
+
+
 #mainlandingpage,
 #navbar,
 #header > div,
